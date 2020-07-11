@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Camp</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/main.css">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+			
+		
+		
+	</head>
+	<body>
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"> <span class="fa fa-road" aria-hidden="true"></span>BestPageEver</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#camp-items" aria-controls="camp-items" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="camp-items">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      
+      
+    </ul>
+    <div class="navbar-nav d-flex my-2 my-lg-0">
+      <%if(!currentUser){%>
+	  
+	  <a class="nav-link " href="/login" >Login</a>
+     <a class="nav-link " href="/register" >SignUp</a>
+	 <%} else{%>
+	 <li id="loggedUser" "class="navbar-brand">
+        Logged in as&nbsp;<%=currentUser.username%>
+      </li>
+	 <a class="nav-link " href="/logout" >Logout</a>
+    <%}%>
+	
+	
+	</div>
+  </div>
+</nav>
+<%if(error!=""){%>
+<div class="container">
+<div class="alert alert-danger" role="alert">
+ <%=error%>
+</div>
+</div>
+<%}else if(success!=""){%>
+<div class="container">
+<div class="alert alert-success" role="alert">
+ <%=success%>
+</div>
+</div><%}%>
+<body>

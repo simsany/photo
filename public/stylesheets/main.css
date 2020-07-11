@@ -1,0 +1,29 @@
+
+
+
+
+.thumbnai {
+	padding: 0;
+	
+	
+}
+
+.thumbnail .caption-full {
+	padding:9px;
+	
+	
+}
+
+#delete{display: inline;
+}
+
+.kep{width: 200px;
+height:200px;}
+
+#loggedUser{font-size:17px; 
+padding-top:8px;}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
