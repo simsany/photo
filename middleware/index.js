@@ -23,7 +23,7 @@ middleware.checkCommentOwnership=function (req,res,next){
 	Comment.findById(req.params.comments_id,(err,foundComment)=>{
 	
 	if(err){res.redirect("back");}else{
-		if(foundComment.author===req.user.username){
+		if(foundComment.author.id===req.user.id){
 			
 	next();	
 	}else{req.flash("error","You don't have permission");}}
