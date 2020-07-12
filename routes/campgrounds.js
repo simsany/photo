@@ -26,7 +26,7 @@ router.post("/", middleware.isLoggedIn, (req, res) => {
 				campground.author.username = req.user.username;
 				campground.save();
 				req.flash("success", "Successfully added!");
-				res.redirect("/campgrounds");
+				res.redirect("/photo");
 			}
 		});
 
@@ -71,7 +71,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, (req, res) => {
 
 
 			req.flash("success", "Successfully updated!");
-			res.redirect("/campgrounds/" + req.params.id)
+			res.redirect("/photo/" + req.params.id)
 
 		}
 	});
@@ -84,7 +84,7 @@ router.delete("/:id", middleware.checkCampgroundOwnership, (req, res) => {
 	Campground.findByIdAndRemove(req.params.id, (err, foundCampground) => {
 		if (err) { console.log("error") } else {
 			req.flash("success", "Successfully removed");
-			res.redirect("/campgrounds");
+			res.redirect("/photo");
 		}
 	}
 	);

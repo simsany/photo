@@ -5,7 +5,7 @@
 		<div class="col-md-3">
 			<h4> Menu</h4>
 			<div class="list-group">
-				<a href="/campgrounds" class="btn btn-dark">Back</a>
+				<a href="/photo" class="btn btn-dark">Back</a>
 				<a href="/" class="btn btn-dark"> Home page </a>
 			
 
@@ -15,18 +15,18 @@
 			<div class="thumbnail">
 				<img class="img-responsive" src="<%=campground.source%>" width="100%" height="600px"><img>
 				<div class="caption-full">
-					<h4 class="float-right"><%=campground.price%>$ royalty (i'm joking)</h4>
+					<h4 style="display:none;" class="float-right"><%=campground.price%>$ royalty (i'm joking)</h4>
 					<p>Added by: <strong><%=campground.author.username%> </strong></p>
 
 					<% if(currentUser&&campground.author.id.equals(currentUser.id)){%>
 
-					<a href="/campgrounds/<%=campground.id%>/edit" class="btn btn-warning">Edit</a>
+					<a href="/photo/<%=campground.id%>/edit" class="btn btn-warning">Edit</a>
 					<form id="delete" action="/campgrounds/<%=campground.id%>?_method=DELETE" method="POST">
 						<button class="btn btn-danger">Delete</button>
 					</form>
 					<%}%>
 					
-					<h4><a href="#"> <%=campground.name%> </a></h4>
+					<h4> <%=campground.name%> </h4>
 					<p><%=campground.description%></p>
 
 
@@ -36,7 +36,7 @@
 			</div>
 			<div>
 				<div class="text-right">
-					<p><a class="btn btn-info" href="/campgrounds/<%=campground._id%>/comments/new">Add new comment</a>
+					<p><a class="btn btn-info" href="/photo/<%=campground._id%>/comments/new">Add new comment</a>
 					</p>
 
 
@@ -68,7 +68,7 @@ case campground.comments[i].date-Date.now()>=-60000 : %>
 						<p> <%=campground.comments[i].text%> </p>
 						<% if(currentUser&&currentUser.id===campground.comments[i].author.id){%>
 						<a class="btn btn-warning"
-							href="/campgrounds/<%=campground.id%>/comments/<%=campground.comments[i].id%>/Edit">Edit</a>
+							href="/photo/<%=campground.id%>/comments/<%=campground.comments[i].id%>/Edit">Edit</a>
 						<form id="delete"
 							action="/campgrounds/<%=campground._id%>/comments/<%=campground.comments[i].id%>?_method=DELETE"
 							method="POST">

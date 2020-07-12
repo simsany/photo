@@ -42,7 +42,7 @@ router.post("/register", (req, res) => {
 router.get("/login", (req, res) => {
 	if (req.isAuthenticated()) {
 		req.flash("success", "You are already logged in!");
-		res.redirect("/campgrounds")
+		res.redirect("/photo")
 	} else {
 		res.render("login.ejs", { currentUser: req.user });
 	}
@@ -63,14 +63,14 @@ router.post("/login", passport.authenticate("local", {
 router.get("/loggedin", middleware.isLoggedIn, (req, res) => {
 
 				req.flash("success", "You just logged in!");
-				res.redirect("/campgrounds");
+				res.redirect("/photo");
 	
 	});
 	router.get("/failedlogin",(req, res) => {
 if(!req.isAuthenticated()){
 				req.flash("error", "Failed to log in!");
 res.redirect("/login");}else{
-	res.redirect("/campgrounds")
+	res.redirect("/photo")
 	
 }
 	

@@ -43,9 +43,9 @@ app.use((req, res, next) => {
 
 app.use(indexRoutes);
 
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/photo/:id/comments", commentRoutes);
 
-app.use("/campgrounds", campgroundRoutes);
+app.use("/photo", campgroundRoutes);
 
 
 
