@@ -25,7 +25,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-mongoose.connect("mongodb+srv://sanyika:3956121@cluster0.hg5xp.mongodb.net/orders?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://sanyika:Nem99@cluster0.hg5xp.mongodb.net/orders?retryWrites=true&w=majority")
 methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
