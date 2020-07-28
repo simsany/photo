@@ -49,7 +49,7 @@
 					<div class="col-md-12">
 						<strong> <%=campground.comments[i].author.username%> </strong>
 						<span class="float-right"> <% switch (true) {case campground.comments[i].date-Date.now()<=-86400000*2: %>
-							<%=parseInt(-((campground.comments[i].date-Date.now())/-86400000))+" days ago"%>
+							<%=parseInt(-((campground.comments[i].date-Date.now())/86400000))+" days ago"%>
 							<% break;
 						
 						case campground.comments[i].date-Date.now()<=-86400000: %>
